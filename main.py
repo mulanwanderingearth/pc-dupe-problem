@@ -20,8 +20,21 @@ class Node:
 
 
 def remove_duplicates(head):
-    # Your solution here!
-    pass
+    # current node = starting node
+    #check if the next node vaule same as current node's vale, we can get ride of the next node and point to the current.next.next
+    #keep doing this until next.value ==None
+    #return this head
+    
+    current = head
+    while current != None and current.next != None:
+
+        if current.next.value == current.value:
+            current.next =current.next.next
+        else:  
+            current = current.next
+    
+   
+    return head
 
 
 # Input: 1->2->2->3
